@@ -6,14 +6,14 @@
 
 export function capitalize(word) {
 	if (word === undefined) throw new Error('word is required');
-		return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-	
+		return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); //changes the first letter to captial
+	                                                                        // letter and adds remaining letters to word
 }
 
 export function generateInitials(firstName, lastName) {
 	if (firstName === undefined) throw new Error('firstName is required');
 	if (lastName === undefined) throw new Error('lastName is required');
-	
+	/* Display First Letter of firstName and Surname as Intials */
 	let intial = firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();
 	return intial;
 	
@@ -25,13 +25,13 @@ export function addVAT(originalPrice, vatRate) {
 	if (vatRate === undefined) throw new Error('vatRate is required');
 	// Add your code here!
 	let newPrice;
+	/*calculate vatPrice with vatRate*/
 	let vatPrice = (vatRate/100)*originalPrice;
-	newPrice = originalPrice + vatPrice;
+	newPrice = originalPrice + vatPrice; // calculate newPrice
+	//checks for decimal value
 	if (newPrice % 1 !== 0)
 	{
-		//console.log("decimal");
-		//console.log(parseFloat(newPrice.toFixed(2)));
-	    return parseFloat(newPrice.toFixed(2));
+		  return parseFloat(newPrice.toFixed(2));
 
 	}
 	console.log("wholenumber");
@@ -119,7 +119,7 @@ export function reverseAllWords(words) {
 export function countLinuxUsers(users) {
 	if (users === undefined) throw new Error('users is required');
 	// Add your code here!
-	const linuxUserNumber = users.filter(user => user.type === "Linux");
+	let linuxUserNumber = users.filter(user => user.type === "Linux");
 	if(linuxUserNumber == 0)
 	{
 		return 0;
@@ -135,8 +135,8 @@ export function getMeanScore(scores) {
 	if (scores === undefined) throw new Error('scores is required');
 	// Add your code here!
 
-	const sum = scores.reduce((accumulator, currentScore) => accumulator + currentScore, 0);
-    const mean = sum / scores.length
+	let sum = scores.reduce((accumulator, currentScore) => accumulator + currentScore, 0);
+    let mean = sum / scores.length
 	if(mean %1 !== 0)
 	{
 		return parseFloat(mean.toFixed(2));

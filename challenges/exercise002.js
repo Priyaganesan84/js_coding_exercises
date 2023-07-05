@@ -1,11 +1,14 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
 	// Your code here!
+	let fillings = sandwich.fillings;
+    return fillings;
 }
 
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error('person is required');
 	// Your code here!
+	
 }
 
 export function getBusNumbers(people) {
