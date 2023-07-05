@@ -59,11 +59,14 @@ export function getSalePrice(originalPrice, reduction) {
 export function getMiddleCharacter(str) {
 	if (str === undefined) throw new Error('str is required');
 	// Add your code here!
-	let middleIndex = Math.floor(str.length /2);
+
+	let middleIndex = Math.floor(str.length /2); // built in js method to round of nearest value
 	let middlecharc;
-	if(str.length % 2 == 0)
+	if(str.length % 2 == 0) //check if reminder is 0
 	{
-		middlecharc = str.slice(middleIndex -1 , middleIndex +1) ;
+		//slice method returns copy of values from original array with start,end index
+		// for eg middleindex value is 4 letter word(TALE) (4/2 = 2); slice method retrives (2-1,2+1) i.e(1,2) (A,L)
+		middlecharc = str.slice(middleIndex -1 , middleIndex +1) ; 
 		return middlecharc;
 	}
 	else
@@ -78,8 +81,10 @@ export function getMiddleCharacter(str) {
 export function reverseWord(word) {
 	if (word === undefined) throw new Error('word is required');
 	// Add your code here!
-	var reversedWord = '';
-    for (var i = word.length - 1; i >= 0; i--) {
+	var reversedWord = ''; // empty string
+    for (var i = word.length - 1; i >= 0; i--) // lopping over the word length -1 
+	{
+       // += appends the reversdWord + characterAt(specific index)
        reversedWord += word.charAt(i);
       }
      return reversedWord;
@@ -119,6 +124,7 @@ export function reverseAllWords(words) {
 export function countLinuxUsers(users) {
 	if (users === undefined) throw new Error('users is required');
 	// Add your code here!
+	// user.type is linux then assign values to user by using filter method. Filter method creates new array with elements from  original array if the conditions statisfies
 	let linuxUserNumber = users.filter(user => user.type === "Linux");
 	if(linuxUserNumber == 0)
 	{
@@ -139,7 +145,7 @@ export function getMeanScore(scores) {
     let mean = sum / scores.length
 	if(mean %1 !== 0)
 	{
-		return parseFloat(mean.toFixed(2));
+		return parseFloat(mean.toFixed(2));  // parsefloat return values in float.i.e two decimal points specified in tofixed argument
 	}
 	else
 	{
