@@ -12,6 +12,15 @@
  */
 export const sumMultiples = (arr) => {
 	if (arr === undefined) throw new Error('arr is required');
+	let sum = 0;
+
+  for (let number of arr) {
+    if (number % 3 === 0 || number % 5 === 0) {
+      sum += number;
+    }
+  }
+
+  return sum;
 };
 
 /**
