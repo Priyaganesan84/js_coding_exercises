@@ -99,14 +99,18 @@ describe('createMatrix', () => {
 
   describe('areWeCovered', () => {
     const staff = [
-      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Sally", rota: ["Monday", "Tuesday", "Thursday","Saturday"] },
       { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
-      { name: "John", rota: ["Tuesday", "Thursday", "Saturday"] }
+      { name: "Priya", rota: ["Tuesday", "Thursday", "Saturday"] },
+      { name: "Elena", rota: ["Thursday","Monday","Friday"]}
     ];
   
     // Test case: Enough staff members scheduled for the given day
     it('should return true if there are enough staff members scheduled for the given day', () => {
       expect(areWeCovered(staff, "Tuesday")).toBe(true);
+      expect(areWeCovered(staff, "Saturday")).toBe(true);
+      expect(areWeCovered(staff, "Thursday")).toBe(true);
+    
      });
 
     // Test case: Not enough staff members scheduled for the given day
