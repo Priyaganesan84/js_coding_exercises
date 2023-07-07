@@ -19,6 +19,15 @@ describe('sumDigits', () => {
   });
   
   
-  
-  
+  describe('createRange' , () => {
+    it('should create a range using provided start,end,step',() => {
+        expect(createRange(3, 11, 2)).toEqual([3, 5, 7, 9, 11]);
+        expect(createRange(2, 4, 2)).toEqual([2,4]);
+        expect(createRange(1,7,2)).toEqual([1, 3, 5, 7]);
+        expect(createRange(1,5,1)).toEqual([1,2,3,4,5]);
+    });
+
+   
+  });
+
   
