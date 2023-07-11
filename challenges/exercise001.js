@@ -151,7 +151,7 @@ export function getMeanScore(scores) {
 	{
 	    return mean;
 	}
-   return mean;
+	
 }
 
 export function simpleFizzBuzz(n) {
